@@ -9,7 +9,7 @@ library(dplyr)
 library(tidyr)
 library(readr)
 
-setwd("/home/getalp/garnerim/Bureau/openslr")
+setwd("/home/getalp/garnerim/Bureau/openslr/openslr_gender_survey")
 #Change accordingly with path to your directory containing the csv file 
 
 
@@ -51,6 +51,8 @@ summary(nprov$`#spk`)
 
 #Creating a subset with all corpora with gender info provided
 prov <- subset(summup_oslr,provided=="yes")
+summary(prov)
+
 #Count where info was found
 prov_stat <- prov %>% group_by(found_in) %>% summarize(count=n())
 
@@ -107,12 +109,30 @@ gender_task_stat <- summup_full %>% group_by(task,elicited,lang_status) %>% summ
                                                                             per_f = spk_f/spk_total*100,
                                                                             per_m =spk_m/spk_total*100)
 
+
+#Examining gender difference at the utterance level
+utt<-subset(summup_oslr,`#utt_m`!="NA") # We create a subset containing corpora with gendered utterance info provided
+gender_utt <- utt %>% summarize(corpora=n(),
+                                nb_m=sum(utt$`#spk_m`,na.rm=T),
+                                nb_f=sum(utt$`#spk_f`,na.rm=T),
+                                sum_utt_m=sum(utt$`#utt_m`),
+                                sum_utt_f=sum(utt$`#utt_f`))
+
+gender_utt2 <- utt %>% group_by(elicited) %>% summarize(corpora=n(),nb_m=sum(`#spk_m`,na.rm=T),
+                                                        nb_f=sum(`#spk_f`,na.rm=T),
+                                                        sum_utt_m=sum(`#utt_m`),
+                                                        sum_utt_f=sum(`#utt_f`))
+
 #Evolution in time
 ggplot(summup_oslr,aes(x=year,fill=provided))+geom_bar()+
-  labs(x="",y="",fill="Gender info\n provided")+
+  labs(x="Year",y="Numberof corpora",fill="Gender info\n provided")+
   scale_x_continuous(lim=c(2010,2020),labels = scales::number_format(big.mark = ""))+
+  theme_bw()+
   theme(axis.text = element_text(size=18),
         legend.title = element_text(size=18),
-        legend.text = element_text(size=15))
+        legend.text = element_text(size=15),
+        panel.grid.major.y = element_line(linetype=3))+
+  scale_fill_grey()
+
 
                      

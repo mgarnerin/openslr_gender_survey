@@ -1,9 +1,9 @@
 id;lang;dial;#spk;#spk_m;#spk_f;#utt;#utt_m;#utt_f;dur;dur_m;dur_f;sizeGB;size;sampling;task;elicited;provided;found_in;lang_status;year;producer
-SLR1  ;hebrew;;1;1;0;60;60;0;;;0;0,006;small;8000;ASR;yes;yes;metadata;Low-resource;NA;Anonymous
+SLR1  ;hebrew;;1;1;0;60;60;0;;;;0,006;small;8000;ASR;yes;yes;metadata;Low-resource;NA;Anonymous
 SLR12  ;english;;2484;1283;1201;;;;;506,4;475,9;63,9;large;16000;ASR;no;yes;metadata;High-resource;2015;Center for Language and Speech Processing & Human Language Technology Center of Excellence
 SLR16  ;english;;189;123;66;;;;;;;91,6;large;16000;ASR;yes;yes;metadata;High-resource;2007;AMI Project
 SLR18  ;chinese;;50;9;31;11142;;;35;;;10,2;medium;16000;ASR;yes;yes;paper;High-resource;2015;Center for Speech and Language Technology (CSLT) at Tsinghua University
-SLR22  ;uyghur;;595;;;9468;;;23,6;;;3;small;16000;ASR;yes;yes;metadata;Low-resource;2015;Center for Speech and Language Technology (CSLT) 
+SLR22  ;uyghur;;595;289;315;9468;;;23,6;;;3;small;16000;ASR;yes;yes;metadata;Low-resource;2015;Center for Speech and Language Technology (CSLT) 
 SLR24  ;iban;;23;9;14;3132;1750;1382;8;4,3;3,7;0,996;small;16000;ASR;no;yes;paper;Low-resource;NA;LIG
 SLR25  ;wolof;;18;10;8;17998;;;2,4;;;1,5;small;16000;ASR;yes;yes;paper;Low-resource;2016;ALFFA Project
 SLR25  ;swahili;;;;;12169;;;;;;2,6;small;16000;ASR;no;no;NA;Low-resource;2012;ALFFA Project
@@ -35,8 +35,8 @@ SLR54  ;nepali;;;;;;;;;;;9,3;medium;16000;ASR;NA;no;NA;Low-resource;2018;Google
 SLR57  ;french;african;;;;;;;;;;2,3;small;16000;ASR;yes;no;NA;High-resource;NA;CTELL & RDECOM (army)
 SLR58  ;korean;;41;32;10;3091;2128;963;2,8;1,9;0,9;0,175;small;16000;ASR;no;yes;paper;High-resource;2018;Electronics Engineering, Inha University
 SLR59  ;catalan;;;;;;;;320;;;18,2;medium;16000;NA;no;no;NA;Low-resource;NA;Col·lectivaT
-SLR6  ;czech;;;;;;26567;;18,3;;;2,1;small;16000;ASR;yes;no;NA;High-resource;2014;Charles University in Prague
-SLR6  ;english;;;;;;51463;;45;;;5,2;medium;16000;ASR;yes;no;NA;High-resource;2014;Charles University in Prague
+SLR6  ;czech;;;;;;26567;0;18,3;;;2,1;small;16000;ASR;yes;no;NA;High-resource;2014;Charles University in Prague
+SLR6  ;english;;;;;;51463;0;45;;;5,2;medium;16000;ASR;yes;no;NA;High-resource;2014;Charles University in Prague
 SLR61  ;spanish;argentinian;47;13;34;5826;1817;4009;;;;2,8;small;48000;NA;yes;yes;indexed;High-resource;2019;Google
 SLR61  ;spanish;peninsular;3;0;3;89;0;89;;;;0,03;small;48000;NA;no;no;manually;High-resource;2019;Google
 SLR62  ;chinese;mandarin;600;;;;;;200;;;18,8;medium;16000;ASR;yes;no;NA;High-resource;NA;Beijing DataTang Technology Co., Ltd.
