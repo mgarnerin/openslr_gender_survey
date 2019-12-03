@@ -60,7 +60,7 @@ prov_stat <- prov %>% group_by(found_in) %>% summarize(count=n())
 #(different from the one above as we sometimes looked for the info manually)
 summup_full <- subset(summup_oslr,!is.na(`#spk_f`))
 gender <- summup_full %>% summarise(spk_f = sum(`#spk_f`),spk_m = sum(`#spk_m`))
-#2735 women et 2733 men - total : 5468 speakers
+#3050 women et 3022 men - total : 6072 speakers
 
 #Examining gender difference regarding elicitation status
 gender_elicited <- summup_full %>% group_by(elicited) %>% summarise(count = n(),
@@ -79,6 +79,8 @@ gender_elicited_woLS_s <- summup_woLS %>% group_by(elicited,size) %>% summarise(
                                                                          spk_total = spk_m+spk_f,
                                                                          per_f = spk_f/spk_total*100,
                                                                          per_m =spk_m/spk_total*100)
+
+# We observe that after removing Librispeech, gender balance in terms of number of speakers is achieved in elicited corpora 
 
 
 
@@ -99,6 +101,8 @@ gender_task<- summup_full %>% group_by(task) %>% summarise(count = n(),
                                                            spk_total = spk_m+spk_f,
                                                            per_f = spk_f/spk_total*100,
                                                            per_m =spk_m/spk_total*100)
+
+#More women present for TTS task
 
 
 #Crossing parameters : task, elicitation status and language status
@@ -122,6 +126,11 @@ gender_utt2 <- utt %>% group_by(elicited) %>% summarize(corpora=n(),nb_m=sum(`#s
                                                         nb_f=sum(`#spk_f`,na.rm=T),
                                                         sum_utt_m=sum(`#utt_m`),
                                                         sum_utt_f=sum(`#utt_f`))
+
+#Caution: 3 outliers, corpora mono-genre containing only male speakers, that are distorting the total number of utterances.
+#If we look at the means, no difference between man and women in non elicited corpora
+
+
 
 #Evolution in time
 ggplot(summup_oslr,aes(x=year,fill=provided))+geom_bar()+
